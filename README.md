@@ -2,17 +2,17 @@
 
 ## Installation/deployment instructions
 
-> **Requirements**: NodeJS `lts/fermium (v.14.15.0)`.
+> **Requirements**: NodeJS `v.14.15.0` or greater.
 
 ### Configuring the dependencies
 
-- Configure an Aws credential with grant to access S3 Bucket, DynamoDB, Lamda, and API Gateway `aws configure`
-- Create a S3 bucket
+- Configure an Aws credential with grant to access S3 Bucket, DynamoDB, Lamda, and API Gateway through `aws configure`
+- Create a S3 bucket to save images
 - Configure BUCKET_NAME variable with created S3 bucket in serverless.ts file.
+- Create the tables Categories and Products in DynamoDB. Use Id as a Partitio key for both tables.
+- Configure CATEGORIES_TABLE and PRODUCTS_TABLE variables in serverless.ts file.
 - (Optional) Configure the public access + static websit hosting for image validation. In that case you can
   configure BUCKET_URL variable the S3 bucket base URL in serverless.ts file.
-- Create the tables Categories and Products in DynamoDB. Use Id as a Partitio key for both tables.
-- You can configure CATEGORIES_TABLE and PRODUCTS_TABLE variables in serverless.ts file.
 
 ### Using NPM
 
@@ -20,7 +20,7 @@
 
 ## Test your service
 
-- In case you want to test directally in AWS environment, please, Run `npm run deploy` before execute the tests.
+- In case you want to test it directly in AWS environment, please, Run `npm run deploy` before execute the tests.
   Also configure the AWS_BASE_URL variable in vitest.config.ts file
 - Run either `npm run test:local` to run the tests localy or `npm run test:aws`
 - You can also Run `npm start` and use the Postman app importing the requests from test.postman_collection.json file.
