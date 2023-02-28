@@ -6,7 +6,7 @@
 
 ### Configuring the dependencies
 
-- Configure an Aws credential with grant to access S3 Bucket, DynamoDB, Lamda, and API Gateway through `aws configure`
+- Configure an Aws credential with grant to access S3 Bucket, DynamoDB, Lamda, Cloudformation, and API Gateway through `aws configure`
 - Create a S3 bucket to save images
 - Configure BUCKET_NAME variable with created S3 bucket in serverless.ts file.
 - Create the tables Categories and Products in DynamoDB. Use Id as a Partitio key for both tables.
